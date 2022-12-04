@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import '../style.css';
 
 function Detail(){
   const [loading, setLoading] = useState(true);
@@ -18,16 +19,16 @@ function Detail(){
 
   return (
     <div>
-    {loading ? (<h1>Loading...</h1>) : (
-      <div>
-        {movies.map((movie) => (
-          <div>
-            <img scr={movie.medium_cover_image} alt={movie.id}></img>
-            <h2>{movie.title}</h2>
-            <span>{movie.year}</span>
-            <span>{movie.description_intro}</span>
-          </div>
-        ))}
+    {loading ? (<h1 id="loading">Loading...</h1>) : (
+      <div id="box">
+        <div className="left">
+        <img src={movies.medium_cover_image}></img>
+        </div>
+        <div className="right">
+          <h2>{movies.title}</h2>
+          <span>{movies.year} · {movies.genres}</span>
+          <span>{movies.description_intro}</span>
+        </div>
       </div>
     )}
     </div>

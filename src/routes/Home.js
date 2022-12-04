@@ -20,7 +20,7 @@ function Home(){
 
   return (
     <div>
-      {loading ? (<h1>Loading...</h1>) : (
+      {loading ? (<h1 id="loading">Loading...</h1>) : (
       <div>
         {movies.map((movie) => (
           <Movie 
